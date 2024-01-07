@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">GrowFarm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create">Create</string>
+    <string name="new_account">New Account.</string>
+    <string name="carrot">Carrot</string>
+    <string name="_1500">₹1500</string>
+    <string name="_2000">₹2000</string>
+    <string name="ankleshwar">Ankleshwar</string>
+    <string name="_1200">₹1200</string>
+    <string name="commodity_market">Commodity/Market</string>
+    <string name="modal_price">Modal Price</string>
+    <string name="max_min_price">Max/Min Price</string>
+    <string name="hello_there_welcome_back">Hello there, Welcome Back</string>
+    <string name="sign_in_to_continue">Sign In to continue</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="new_user_sign_up">New User? SIGN UP</string>
+    <string name="name">Name</string>
+    <string name="email_optional">Email (Optional)</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="sign_up_to_start">Sign Up to start</string>
+    <string name="welcome">Welcome</string>
+    <string name="txt_error_message">%1$S*</string>
+</resources>
