@@ -1,6 +1,7 @@
 package com.buddy.growfarm.ui.authentication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,10 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        if(session.getUserID() != null){
+            findNavController().navigate(R.id.action_loginFragment_to_appActivity)
+        }
+
         _binding = FragmentLoginBinding.inflate(inflater,container,false)
 
         return binding.root
@@ -40,7 +45,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSignIn.setOnClickListener {
-            authViewModel.loginUser(binding.tilPhoneNumber.toString(),binding.tilPassword.toString())
+            authViewModel.loginUser(binding.tilPhoneNumber.text.toString(),binding.tilPassword.text.toString())
         }
 
         binding.btnSignUp.setOnClickListener {
@@ -57,12 +62,14 @@ class LoginFragment : Fragment() {
                 is  NetworkResult.Success -> {
                     session.saveUserID(it.data!!.id)
                     session.saveUserPhone(it.data.phoneNumber)
-                    findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                    session.setLoggedIn(true)
+                    findNavController().navigate(R.id.action_loginFragment_to_appActivity)
                 }
                 is NetworkResult.Loading ->{
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 is NetworkResult.Error ->{
+                    Log.e("error",it.message.toString())
                     showValidationErrors(it.message.toString())
                 }
             }

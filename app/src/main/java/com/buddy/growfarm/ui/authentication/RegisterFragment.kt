@@ -36,10 +36,6 @@ class RegisterFragment : Fragment() {
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
-        if(session.getUserID() != null){
-            findNavController().navigate(R.id.action_registerFragment_to_otpFragment)
-        }
-
         return binding.root
     }
 

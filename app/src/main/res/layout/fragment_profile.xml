@@ -9,18 +9,9 @@
     android:padding="20dp"
     tools:context=".ui.authentication.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/grow_farm_logo"
-        android:transitionName="logo_image" />
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
-
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/signup_title_text"
@@ -28,44 +19,24 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:fontFamily="@font/bungee"
-            android:text="Welcome"
+            android:text="Complete Profile"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:transitionName="transition_title_text" />
-
-
-        <TextView
-            android:id="@+id/signup_slide_text"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/circle_border"
-            android:fontFamily="@font/bungee"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="2/2"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:transitionName="transition_slide_text" />
-
-
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/slogan_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up to start"
-        android:textSize="18sp" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfilePic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_width="1dp"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
 
@@ -119,29 +90,96 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPincode"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Pincode">
+            android:hint="Pincode"
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tilPincode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Roles"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp" />
+
+        <RadioGroup
+            android:id="@+id/rgChooseRoles"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/farmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Farmer" />
+
+
+            <RadioButton
+                android:id="@+id/Doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Doctor" />
+
+
+            <RadioButton
+                android:id="@+id/ShopOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Shop owner" />
+
+        </RadioGroup>
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnSignUp2"
+    <LinearLayout
+        android:id="@+id/btnComplete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/black"
-        android:elevation="5dp"
-        android:text="Sign Up"
-        android:textColor="@color/white"
-        android:transitionName="transition_next_btn" />
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#985EFF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#FFF"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complete"
+            android:textColor="#fff"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="#2196F3"
+        android:textSize="12sp" />
 
 
 </LinearLayout>

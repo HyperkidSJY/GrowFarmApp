@@ -10,15 +10,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-//@HiltViewModel
-//class PricesViewModel@Inject constructor(private val diffRepository: DiffRepository) : ViewModel() {
-//
-//    val pricesResponseLiveData : LiveData<NetworkResult<PricesResBody>>
-//        get() = diffRepository.recordPricesLiveData
-//
-//    fun getPrices(state : String, district : String){
-//        viewModelScope.launch {
-//            diffRepository.getPrices(state, district)
-//        }
-//    }
-//}
+@HiltViewModel
+class PricesViewModel@Inject constructor(private val diffRepository: DiffRepository) : ViewModel() {
+
+    val pricesResponseLiveData : LiveData<NetworkResult<PricesResBody>>
+        get() = diffRepository.recordPricesLiveData
+
+    fun getPrices(pincode : String){
+        viewModelScope.launch {
+            diffRepository.getPrices(pincode)
+        }
+    }
+}

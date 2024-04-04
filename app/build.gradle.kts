@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -43,7 +44,6 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
-    val room_version = "2.6.1"
     val lifecycle_version = "2.6.2"
 
     implementation("androidx.core:core-ktx:1.9.0")
@@ -62,10 +62,6 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.google.code.gson:gson:2.10.1")
 
-    //RoomDatabase
-    implementation("androidx.room:room-runtime:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 
@@ -74,7 +70,14 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
 
-    implementation("io.github.chaosleung:pinview:1.4.4")
+    implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0")
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 }
 
 kapt {

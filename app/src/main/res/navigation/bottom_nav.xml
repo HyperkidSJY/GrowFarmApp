@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.buddy.growfarm.ui.posts.CreatePostFragment"
+        android:label="New Post"
+        tools:layout="@layout/fragment_create_post" />
+    <fragment
+        android:id="@+id/getUserPostsFragment"
+        android:name="com.buddy.growfarm.ui.posts.GetUserPostsFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_get_user_posts" >
+        <action
+            android:id="@+id/action_getUserPostsFragment_to_manageConnectionsFragment"
+            app:destination="@id/manageConnectionsFragment">
+            <argument
+                android:name="isFollowers"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_getUserPostsFragment_to_commentSectionFragment"
+            app:destination="@id/commentSectionFragment">
+            <argument
+                android:name="postId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.buddy.growfarm.ui.home.HomeFragment"
+        android:label="GrowFarm"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_commentSectionFragment"
+            app:destination="@id/commentSectionFragment">
+            <argument
+                android:name="postId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/pricesFragment"
+        android:name="com.buddy.growfarm.ui.prices.PricesFragment"
+        android:label="Prices"
+        tools:layout="@layout/fragment_prices" />
+    <fragment
+        android:id="@+id/connectFragment"
+        android:name="com.buddy.growfarm.ui.connect.ConnectFragment"
+        android:label="Connect"
+        tools:layout="@layout/fragment_connect" />
+    <fragment
+        android:id="@+id/manageConnectionsFragment"
+        android:name="com.buddy.growfarm.ui.connect.ManageConnectionsFragment"
+        android:label="Manage Connections"
+        tools:layout="@layout/fragment_manage_connections" />
+    <fragment
+        android:id="@+id/commentSectionFragment"
+        android:name="com.buddy.growfarm.ui.posts.CommentSectionFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_comment_section" />
+</navigation>

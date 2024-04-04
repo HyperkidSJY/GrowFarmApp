@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/connectFragment"
+        android:icon="@drawable/ic_connect"
+        android:title="Connect"/>
+    <item
+        android:id="@+id/createPostFragment"
+        android:icon="@drawable/ic_post"
+        android:title="Create" />
+    <item
+        android:id="@+id/pricesFragment"
+        android:icon="@drawable/ic_prices"
+        android:title="Prices"/>
+    <item
+        android:id="@+id/getUserPostsFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+</menu>

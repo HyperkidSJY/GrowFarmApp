@@ -11,11 +11,8 @@
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/registerFragment"
-            app:popUpToInclusive="true" />
-
+            android:id="@+id/action_loginFragment_to_appActivity"
+            app:destination="@id/appActivity" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -29,11 +26,20 @@
             android:id="@+id/action_registerFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
     </fragment>
+    <activity
+        android:id="@+id/appActivity"
+        android:name="com.buddy.growfarm.AppActivity"
+        android:label="activity_app"
+        tools:layout="@layout/activity_app" />
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.buddy.growfarm.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:id="@+id/profileFragment"
+        android:name="com.buddy.growfarm.ui.authentication.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_appActivity"
+            app:destination="@id/appActivity" />
+    </fragment>
     <fragment
         android:id="@+id/otpFragment"
         android:name="com.buddy.growfarm.ui.authentication.OtpFragment"
@@ -42,14 +48,5 @@
         <action
             android:id="@+id/action_otpFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.buddy.growfarm.ui.authentication.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
